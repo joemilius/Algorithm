@@ -1,16 +1,27 @@
 function knightBattle(array, p, r){
-    let seatAddedArray = array.splice(p, 0, r)
-
+    array.splice(p, 0, r)
+    console.log(array)
     let counter = 0
+    let winner = 0
+    
 
-    while(counter < seatAddedArray.length){
-        if(seatAddedArray[0] === seatAddedArray[seatAddedArray[seatAddedArray.length -1]]){
-            seatAddedArray.pop()
-            seatAddedArray[0] = seatAddedArray[0] + 1
-        }else if(seatAddedArray[counter]){
-
-        }
+    while(counter < array.length){
+        if(array[0] === array[array.length -1]){
+            array.splice(array.length - 1)
+            console.log('line 11', array)
+            winner++
+        }else if(array[counter] === array[counter + 1]){
+            array.splice(counter, 1)
+            winner++
+        }else if(array[counter] !== array[counter + 1]){
+            array.splice(counter + 1 , 1, array[counter] + winner)
+            // array.splice(counter, 1)
+            winner = 0
+            counter++
+        } 
     }
+    
+    console.log(array)
 }
 
 //unfinished!
@@ -23,3 +34,7 @@ for each value in the collection of values that are the same
 [8, 8, 6, 8] => [10, 6]
 [1, 1, 2, 4, 2, 3, 4] => [3, 4, 2, 3, 4]
 */
+
+// knightBattle([8, 8, 6], 1, 8)
+// knightBattle([8, 6, 8], 1, 8)
+knightBattle([1, 2, 4, 2, 3, 4], 1, 1)
