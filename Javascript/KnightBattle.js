@@ -8,14 +8,18 @@ function knightBattle(array, p, r){
     while(counter < array.length){
         if(array[0] === array[array.length -1]){
             array.splice(array.length - 1)
-            console.log('line 11', array)
             winner++
         }else if(array[counter] === array[counter + 1]){
             array.splice(counter, 1)
             winner++
+        }else if(array[counter] === array[counter - 1]){
+            array.splice(counter - 1, 1)
+            console.log('hi')
+            winner = 1
         }else if(array[counter] !== array[counter + 1]){
-            array.splice(counter + 1 , 1, array[counter] + winner)
-            // array.splice(counter, 1)
+            array.splice(counter, 1, array[counter] + winner)
+            array.splice(counter, 1)
+            
             winner = 0
             counter++
         } 
