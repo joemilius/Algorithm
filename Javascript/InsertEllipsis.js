@@ -5,7 +5,9 @@ function truncateString(str, num) {
       truncate.push(str.substring(0, num))
       truncate.push('...')
       joined = truncate.join('')
-    }
+    }else {
+        joined = str
+      }
     console.log(joined)
     return joined;
   }
