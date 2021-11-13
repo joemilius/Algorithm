@@ -27,6 +27,9 @@ function knightBattle(array, p, r){
     
     console.log(array)
 }
+knightBattle([8, 8, 6], 1, 8)
+knightBattle([8, 6, 8], 1, 8)
+knightBattle([1, 2, 4, 2, 3, 4], 1, 1)
 
 //unfinished!
 
