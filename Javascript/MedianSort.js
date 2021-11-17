@@ -1,6 +1,7 @@
 function medianSort(array){
     let median = 0
     let number = 0
+    let sortedArray = []
     for(let i = 0; i < array.length; i++){
         if(Array.isArray(array[i])){
             if(array[i].length % 2 === 0){
@@ -10,6 +11,17 @@ function medianSort(array){
             }
         }else {
             number = arr[i]
+        }
+    }
+
+    for(let j = 0; j < array.length; j++){
+        if(Array.isArray(array[j])){
+            if(median >= number){
+                sortedArray.push(number)
+                sortedArray.push(array[j])
+            }else {
+
+            }
         }
     }
 
