@@ -1,9 +1,31 @@
 function sortColumns(str){
-console.log(str)
+let newArr = []
+let result = []
+let table = str.split('\n').map(word => word.split(','))
+
+    for(let i = 0; i < table[0].length; i++){
+        let object = new Object
+        object.name = table[0][i]
+        object.large = table[1][i]
+        object.small = table[2][i]
+        newArr.push(object)
+    }
+
+    newArr.sort(
+        function(a, b) {
+            if(a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+            if(a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+        }
+    )
+    result.push[newArr.map(item => item.name) + '\\n']
+    result.push[newArr.map(item => item.large) + '\\n']
+    result.push[newArr.map(item => item.small)]
+
+    return result.join()
+
 }
 
-sortColumns("steve,Andrew,michael,Yamuna,Harrison,Leslie\n3112,21352,123412,14134,1235,51
-325\n2,6,3,4,1,5")
+sortColumns("steve,Andrew,michael,Yamuna,Harrison,Leslie\n3112,21352,123412,14134,1235,51325\n2,6,3,4,1,5")
 
 /*
 Write a function sortColumns() that accepts one argument, a string representation of a data table, 
