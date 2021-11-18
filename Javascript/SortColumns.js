@@ -1,6 +1,9 @@
-function sortColumns(){
-    
+function sortColumns(str){
+console.log(str)
 }
+
+sortColumns("steve,Andrew,michael,Yamuna,Harrison,Leslie\n3112,21352,123412,14134,1235,51
+325\n2,6,3,4,1,5")
 
 /*
 Write a function sortColumns() that accepts one argument, a string representation of a data table, 

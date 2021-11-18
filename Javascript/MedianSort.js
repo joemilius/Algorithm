@@ -44,3 +44,17 @@ medianSort([[2.4, 0.2, 9.8], 0, [-1], [-9, -4]]) à [[-9, -4], [-1], 0, [2.4,
 The median of [2.4, 0.2, 9.8] is 2.4. The median of [-1] is -1. The median of [-9, -4] is -6.5. 
 Therefore, the sorted order of these medians is [-6.5, -1, 0, 2.4]
 */
+
+/*
+```const medianSort = (arr) => {
+		return arr.sort((a, b) => {
+   		if (Array.isArray(a)) {
+      	a = a.reduce((c, d) => c+d, 0)
+      }
+      if (Array.isArray(b)) {
+      	b = b.reduce((c, d) => c+d, 0)
+      }
+      return a - b
+    })
+}```
+*/
