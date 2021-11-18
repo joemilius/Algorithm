@@ -46,15 +46,25 @@ Therefore, the sorted order of these medians is [-6.5, -1, 0, 2.4]
 */
 
 /*
-```const medianSort = (arr) => {
-		return arr.sort((a, b) => {
-   		if (Array.isArray(a)) {
-      	a = a.reduce((c, d) => c+d, 0)
-      }
-      if (Array.isArray(b)) {
-      	b = b.reduce((c, d) => c+d, 0)
-      }
-      return a - b
-    })
-}```
+const medianSort = (arr) => {
+  return arr.sort((a, b) => {
+      if (Array.isArray(a)) {
+          a = findMedian(a)
+        }
+        if (Array.isArray(b)) {
+          b = findMedian(b)
+        }
+        return a - b
+      })
+  }
+  const findMedian = (arr) => {
+    arr.sort(function(a,b){
+      return a-b;
+    });
+    let median = Math.floor(arr.length / 2);
+    if (arr.length % 2){
+      return arr[median]
+    }else{
+    return (arr[median - 1] + arr[median]) / 2.0;
+  }}
 */
