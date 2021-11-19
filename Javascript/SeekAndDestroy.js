@@ -1,14 +1,12 @@
 function destroyer(arr) {
     let argumentsArray = Object.values(arguments)
     let filtered = argumentsArray[0]
-    
   
     for(let i = 1; i < argumentsArray.length; i++){
-      console.log(argumentsArray[i])
       filtered = filtered.filter(item => item !== argumentsArray[i])
     }
     console.log(filtered)
-    return arr;
+    return filtered;
   }
   
   destroyer([1, 2, 3, 1, 2, 3], 2, 3);
