@@ -1,4 +1,34 @@
-
+function placeDominos(L,D,A){
+    let currentLayout = []
+    let minMoves = -1
+    let newDistance
+  
+    for (let i = 0; i <= L; i += D){
+      currentLayout.push(i)
+    }
+    for (let i = 0; i <= A.length - 1; i++){
+      let moves = 0
+      let possibleLayout = []
+      for (let j = 0; j <= L; j += A[i]){
+        possibleLayout.push(j)
+      }
+      for (let j = 0; j < currentLayout.length; j++){
+        if (!possibleLayout.includes(currentLayout[j])){
+          moves++
+        }
+      }
+      for (let j = 0; j < possibleLayout.length; j++){
+        if (!currentLayout.includes(possibleLayout[j])){
+          moves++
+        }
+      }
+      if (minMoves > moves || minMoves === -1){
+        minMoves = moves
+        newDistance = A[i]
+      }
+    }
+    return newDistance
+  }
 
 /*
 You are in the finals of a national domino-placing competition. Unfortunately, the loud crowd prevented you from 
