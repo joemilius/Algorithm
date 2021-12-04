@@ -27,6 +27,10 @@ create a function getBias that is given an array of numbers(representing each em
 -the function should pair employees by their closest skill level and find the difference in skill level
 -the difference will be the bias
 -then the total bias would be the differences of each pair added together
+
+Conditions:
+- arrays will always have an even number of values
+- all values will be positive integers
 */
 function getBias(n){
    
