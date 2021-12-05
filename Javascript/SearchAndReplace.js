@@ -7,6 +7,11 @@ function myReplace(str, before, after) {
       newWord.splice(0, 1, after[0].toUpperCase())
       newWord = newWord.join('')
       console.log(newWord)
+    }else {
+      newWord = after.split('')
+      newWord.splice(0, 1, after[0].toLowerCase())
+      newWord = newWord.join('')
+      console.log(newWord)
     }
     
     for(let i = 0; i < words.length; i++){
