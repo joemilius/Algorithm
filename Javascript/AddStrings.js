@@ -2,13 +2,15 @@ var addStrings = function(num1, num2) {
     let num1Array = num1.split('').reverse()
     let num2Array = num2.split('').reverse()
     let sumArray = []
-    
     let longest = 0
+    
     
     if(num1Array.length > num2Array.length){
         longest = num1Array.length
     }else if(num1Array.length < num2Array.length){
         longest = num2Array.length
+    }else {
+        longest = num1Array.length
     }
     
     for(let i = 0; i < longest; i++){
@@ -20,7 +22,15 @@ var addStrings = function(num1, num2) {
             sumArray.push(parseInt(num2Array[i]))
         }
     }
-    return sumArray.reverse()
+    console.log(sumArray)
+    
+    for(let j = 0; j < sumArray.length; j++){
+        if(sumArray[j].toString().split('').length > 1){
+            sumArray[j + 1] = parseInt(sumArray[j + 1] + parseInt(sumArray[j].toString().split('')[0]))
+            sumArray[j] = parseInt(sumArray[j].toString().split('')[1])
+        }
+    }
+    return sumArray.reverse().join('').toString()
 };
 
 /*
