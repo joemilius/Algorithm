@@ -30,3 +30,30 @@ is_valid("()")
 is_valid("()[]{}")
 is_valid("(]")
 is_valid("([)]")
+
+## Refactored in if conditionals Slower ##
+# def is_valid(s)
+#     string_array =  s.split('')
+#     puts string_array
+#     stack = []
+#     string_array.each do |para|
+#         if para == '(' || para == '{' || para == '['
+#             stack << para
+#         elsif para == ')'
+#             if stack.pop != '('
+#                 return false
+#             end
+#         elsif para == '}'
+#             if stack.pop != '{'
+#                 return false
+#             end
+#         elsif para == ']'
+#             if stack.pop != '['
+#                 return false
+#             end
+
+#         end
+#     end
+
+#     return stack.empty?
+# end
