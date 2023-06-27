@@ -38,3 +38,13 @@ end
 merge_alternately("abc", "pqr")
 merge_alternately("ab", "pqrs")
 merge_alternately("abcd", "pq")
+
+## Refactor ##
+# def merge_alternately(word1, word2)
+#     res = word1.split('').zip(word2.split(''))
+#     if word2.size > word1.size
+#         res << word2[word1.size..]
+#     end
+    
+#     res.join('')
+# end
