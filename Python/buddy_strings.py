@@ -40,22 +40,38 @@
 
 #         return valid
 
+# class Solution:
+#     def buddyStrings(self, s, goal):
+#         if len(s) != len(goal):
+#             return False
+        
+#         if s == goal:
+#             return len(set(s)) < len(s)
+        
+#         diff_indices = []
+#         for i in range(len(s)):
+#             if s[i] != goal[i]:
+#                 diff_indices.append(i)
+#                 if len(diff_indices) > 2:
+#                     return False
+        
+#         return len(diff_indices) == 2 and s[diff_indices[0]] == goal[diff_indices[1]] and s[diff_indices[1]] == goal[diff_indices[0]]
+
 class Solution:
-    def buddyStrings(self, s, goal):
-        if len(s) != len(goal):
-            return False
-        
-        if s == goal:
-            return len(set(s)) < len(s)
-        
-        diff_indices = []
+    def buddyStrings(self, s: str, goal: str) -> bool:
+
+        count = 0
+        k=[]
+        if len(s)!= len(goal): return False
         for i in range(len(s)):
-            if s[i] != goal[i]:
-                diff_indices.append(i)
-                if len(diff_indices) > 2:
-                    return False
-        
-        return len(diff_indices) == 2 and s[diff_indices[0]] == goal[diff_indices[1]] and s[diff_indices[1]] == goal[diff_indices[0]]
+            if s[i]!= goal[i]:
+                count +=1
+                k.append(i)
+                    
+        if count >2 : return False
+        elif count == 2 and s[k[0]] == goal[k[1]] and s[k[1]] == goal[k[0]]: return True
+            
+        elif count == 0 and len(set(s)) < len(s): return True
 
     buddyStrings("ab", "ba") #true
     buddyStrings("ab", "ab") #false
