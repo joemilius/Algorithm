@@ -36,6 +36,9 @@ print(create_phone_number([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])) # "(000) 000-0000"
 #     return f"({m[:3]}) {m[3:6]}-{m[6:]}"
 
 
+# def create_phone_number(n):
+# 	return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
+
 
 # def create_phone_number(n):
 #   d='('
