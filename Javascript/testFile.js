@@ -24,7 +24,7 @@ import fetch from "node-fetch";
 // .then(resp => resp.json())
 // .then(data => console.log(data))
 
-fetch(`https://www.googleapis.com/books/v1/volumes?q=rye&key=AIzaSyAFot0f1lMbwAY9D91JMfxO4tEzDWflnSU`)
+fetch(`https://www.googleapis.com/books/v1/volumes?q=`)
 .then(resp => resp.json())
 .then(data => console.log(data.items))
 
